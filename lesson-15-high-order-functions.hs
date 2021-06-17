@@ -96,13 +96,3 @@ collatzSequenceTest =
             [1 .. 100]
         )
     )
-
-mySum :: (Foldable t, Num b) => t b -> b
-mySum = foldl (+) 0
-
-
-myElem :: (Foldable t, Eq a) => a -> t a -> Bool
-myElem y = foldl (\acc x -> if x == y then True else acc) False
-
-myMap2 :: Foldable t1 => (t2 -> a) -> t1 t2 -> [a]
-myMap2 fun = foldr (\x acc -> (fun x) : acc) []
