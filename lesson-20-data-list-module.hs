@@ -60,7 +60,7 @@ breakTest = break (== 4) [1, 2, 3, 4, 5, 6] -- -> ([1,2,3], [4,5,6])
 groupTest = group [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 2, 2, 2, 5, 6, 7] -- -> [[1,1,1,1],[2,2,2,2],[3,3],[2,2,2],[5],[6],[7]]
 
 -- inits takes a list and applies init to it. I then recursively applies init
--- to the result and returns an array of all possible init results until the
+-- to the result and returns a list of all possible init results until the
 -- init returns an empty list.
 initTest = inits "123" -- -> ["","1","12","123"]
 
@@ -84,3 +84,32 @@ mySearchRecu needle haystack =
   stackStartsWithNeedle || mySearchRecu needle (tail haystack)
   where
     stackStartsWithNeedle = take (length needle) haystack == needle
+
+-- find takes a list and a predicate and returns the first occurrence of it
+-- it returns a maybe value. Maybe values are values that can be either a 
+-- single value or nothing.
+
+-- elemIndex might return the index of the first occurrence of the searched value in a list
+
+-- elemIndices returns the indices of all occurences of the searched value in a list
+
+-- findIndex is like find, but returns the index of the first element that 
+-- satifies the given predicate
+
+-- delete takes an element and a list and deletes the first occurence of the 
+-- given element from the list
+
+-- nub takes a list and deletes all duplicate elements from it
+
+-- \\ is the list difference function. It takes two lists and removes the 
+-- elements in the right list from the left list
+-- [1, 2, 3, 4, 5, 6] \\ [1, 3, 5] -> [2, 4, 6]
+
+-- union joins to lists together and removes all duplicate elements from the 
+-- resulting list
+
+-- intersect returns all elements found in both supplied lists
+
+-- insert takes an element and a list which is part of the Ord type class and 
+-- inserts the element in the first position where it's still less than or 
+-- equal to the next element into the list
